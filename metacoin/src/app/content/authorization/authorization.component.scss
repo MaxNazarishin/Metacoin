@@ -5,7 +5,7 @@
    align-items: center;
    position: relative;
    z-index: 1;
-   overflow: auto;
+   overflow: hidden;
    padding-left: 200px;
 }
 
@@ -321,7 +321,8 @@
    .login-page-conteiner {
       align-self: center;
       justify-content: center;
-      padding: 160px 15px 15px 15px;
+      padding: 15px 15px 15px 15px;
+      min-height: 650px;
    }
 
    .login-page__links,
@@ -333,11 +334,5 @@
    .login-page,
    .sing-up-page {
       height: fit-content;
-   }
-}
-
-@media screen and (max-width: 600px) {
-   .login-page-conteiner {
-      padding-top: 320px;
    }
 }
