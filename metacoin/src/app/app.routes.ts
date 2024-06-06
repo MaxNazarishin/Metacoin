@@ -6,6 +6,7 @@ import { AuthorizationComponent } from './content/authorization/authorization.co
 import { PageNotFoundComponent } from './content/page-not-found/page-not-found.component';
 export const routes: Routes = [
    { path: '', component: MainComponent },
+   { path: 'main', component: MainComponent },
    { path: 'dashboard', component: DashboardComponent },
    { path: 'coinlist', component: CoinlistComponent },
    { path: 'authorization', component: AuthorizationComponent },
