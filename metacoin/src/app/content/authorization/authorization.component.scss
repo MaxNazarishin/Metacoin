@@ -28,14 +28,14 @@
 .login-page__login {
    height: 35px;
    background: linear-gradient(90deg, rgba(186, 41, 253, 1) 0%, rgba(231, 109, 161, 1) 100%);
-   -webkit-background-clip: text;
+   background-clip: text;
    -webkit-text-fill-color: transparent;
 }
 
 .login-page__sing-up {
    height: 35px;
    background-color: #998bb0;
-   -webkit-background-clip: text;
+   background-clip: text;
    -webkit-text-fill-color: transparent;
 }
 
@@ -182,14 +182,14 @@
 .sing-up-page__login {
    height: 35px;
    background-color: #998bb0;
-   -webkit-background-clip: text;
+   background-clip: text;
    -webkit-text-fill-color: transparent;
 }
 
 .sing-up-page__sing-up {
    height: 35px;
    background: linear-gradient(90deg, rgba(186, 41, 253, 1) 0%, rgba(231, 109, 161, 1) 100%);
-   -webkit-background-clip: text;
+   background-clip: text;
    -webkit-text-fill-color: transparent;
 }
 
