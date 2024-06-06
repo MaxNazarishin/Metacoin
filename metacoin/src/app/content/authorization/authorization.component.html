@@ -1,0 +1,89 @@
+<div class="login-page-conteiner">
+   <div class="login-page" [ngClass]="{'show': isLoginPage, 'hide': !isLoginPage}">
+      <div class="login-page__text-meta">Meta</div>
+      <div class="login-page__text-coin">coin</div>
+      <div class="login-page__circle1"></div>
+      <div class="login-page__circle2"></div>
+      <div class="login-page__links">
+         <button class="login-page__login" (click)="showLoginPage()">Login</button>
+         <button class="login-page__sing-up" (click)="showSignUpPage()">Sing Up</button>
+      </div>
+      <div class="login-page__form form-login-page">
+         <form id="regForm1">
+            <label for="email1" class="form-login-page__label-email">Email</label>
+            <input class="form-login-page__input-email" type="email" id="email1" required
+               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="Email">
+
+            <label for="password1" class="form-login-page__label-password">Password</label>
+            <input class="form-login-page__input-password" type="password" id="password1" minlength="6" required
+               placeholder="Password">
+
+            <button class="form-login-page__button-submit" type="submit">Login</button>
+         </form>
+      </div>
+      <div class="login-page__link-back link-back">
+         <a href="#" class="link-back__link">
+            <div class="link-back__element"><img src="../../../assets/authorization-img/tick.svg" alt="img"></div>
+            <span class="link-back__text">Back</span>
+         </a>
+      </div>
+   </div>
+
+   <div class="sing-up-page" [ngClass]="{'show': !isLoginPage, 'hide': isLoginPage}">
+      <div class="sing-up-page__text-meta">Meta</div>
+      <div class="sing-up-page__text-coin">coin</div>
+      <div class="sing-up-page__circle1"></div>
+      <div class="sing-up-page__circle2"></div>
+      <div class="sing-up-page__links">
+         <button class="sing-up-page__login" (click)="showLoginPage()">Login</button>
+         <button class="sing-up-page__sing-up" (click)="showSignUpPage()">Sing Up</button>
+      </div>
+      <div class="sing-up-page__form form-sing-up-page">
+         <form id="regForm2">
+            <label for="referral-id" class="form-sing-up-page__label-referral-id">Referral ID</label>
+            <input class="form-sing-up-page__input-referral-id" type="text" id="referral-id" minlength="6" required
+               placeholder="Referral ID">
+
+            <div class="form-sing-up-page__user-box">
+               <div class="form-sing-up-page__username-box">
+                  <label for="username" class="form-sing-up-page__label-username">Username</label>
+                  <input class="form-sing-up-page__input-username" type="text" id="username" minlength="3" required
+                     placeholder="Username">
+               </div>
+               <div class="form-sing-up-page__display-name-box">
+                  <label for="display-name" class="form-sing-up-page__label-display-name">Display Name</label>
+                  <input class="form-sing-up-page__input-display-name" type="text" id="display-name" minlength="6"
+                     required placeholder="Display Name">
+               </div>
+            </div>
+
+            <label for="email2" class="form-sing-up-page__label-email">Email</label>
+            <input class="form-sing-up-page__input-email" type="email" id="email2" required
+               pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" placeholder="Email">
+
+            <div class="form-sing-up-page__password-box">
+               <div class="form-sing-up-page__password2-box">
+                  <label for="password2" class="form-sing-up-page__label-password">Password</label>
+                  <input class="form-sing-up-page__input-password" type="password" id="password2" minlength="6" required
+                     placeholder="Password">
+               </div>
+               <div class="form-sing-up-page__confirm-password-box">
+                  <label for="confirm-password" class="form-sing-up-page__label-confirm-password">Confirm
+                     Password</label>
+                  <input class="form-sing-up-page__input-confirm-password" type="password" id="confirm-password"
+                     minlength="6" required placeholder="Confirm Password">
+               </div>
+            </div>
+
+
+            <button class="form-sing-up-page__button-submit" type="submit">Sing Up</button>
+         </form>
+      </div>
+      <div class="sing-up-page__link-back link-back">
+         <a href="#" class="link-back__link">
+            <div class="link-back__element"><img src="../../../assets/authorization-img/tick.svg" alt="img"></div>
+            <span class="link-back__text">Back</span>
+         </a>
+      </div>
+   </div>
+</div>
