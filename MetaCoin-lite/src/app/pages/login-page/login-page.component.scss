@@ -36,7 +36,7 @@
 .login-page__sing-up {
   height: 35px;
   background-color: $wt-md-text;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -81,7 +81,7 @@
   border-radius: 50px;
   width: 100%;
   padding: 20px;
-  border: none;
+  // border: none;
 }
 
 .form-login-page__input-password:focus,
@@ -186,7 +186,7 @@
 .sing-up-page__sing-up {
   height: 35px;
   @extend .gradient-background;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -203,7 +203,7 @@
 .form-sing-up-page__label-display-name,
 .form-sing-up-page__label-confirm-password {
   margin-bottom: 10px;
-  color:var(--text-color);
+  color: var(--text-color);
   cursor: pointer;
   display: inline-block;
 }
@@ -232,7 +232,7 @@
   width: 100%;
   background-color: $dk-md-text;
   padding: 20px;
-  border: none;
+  // border: none;
 }
 
 .form-sing-up-page__user-box {
