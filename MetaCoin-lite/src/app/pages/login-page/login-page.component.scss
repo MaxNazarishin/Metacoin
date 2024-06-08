@@ -1,0 +1,334 @@
+@import '../../../styles/styles';
+
+.container-fluid {
+  height: 950px;
+  padding: 0;
+}
+
+.login-page-container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  padding-left: 200px;
+  min-height: 650px;
+  max-width: 100%;
+}
+
+.login-page {
+  max-width: 390px;
+  font-family: $font-family-inter;
+  letter-spacing: -0.37px;
+  position: relative;
+}
+
+.login-page__login,
+.login-page__sing-up {
+  font-size: 32px;
+  line-height: 28px;
+  font-weight: 700;
+  font-family: $font-family-philosopher;
+}
+
+.login-page__login,
+.login-page__sing-up {
+  height: 35px;
+  background-color: $wt-md-text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.login-page__links {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 25px;
+
+}
+
+.login-page__login:hover,
+.login-page__sing-up:hover {
+  @extend .gradient-text;
+}
+
+.form-login-page__label-email,
+.form-login-page__label-password {
+  margin-bottom: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.form-login-page__input-email {
+  margin-bottom: 25px;
+}
+
+.form-login-page__input-password {
+  margin-bottom: 50px;
+}
+
+.form-login-page__button-submit {
+  font-size: 20px;
+  padding: 18px 0;
+  width: 100%;
+  border-radius: 50px;
+  color: $wt-md-white;
+  border: none;
+}
+
+.form-login-page__input-password,
+.form-login-page__input-email {
+  border-radius: 50px;
+  width: 100%;
+  padding: 20px;
+  border: none;
+}
+
+.form-login-page__input-password:focus,
+.form-login-page__input-email:focus {
+  outline: inherit;
+}
+
+.link-back__link {
+  color: var(--text-color);
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  width: 40px;
+}
+
+.link-back__text {
+  line-height: 30px;
+  margin-left: 40px;
+}
+
+.link-back__element {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #d3cedd;
+  z-index: -1;
+  border-radius: 50%;
+  padding: 3px 10px;
+}
+
+.login-page__form {
+  margin-bottom: 20px;
+}
+
+/*=============*/
+
+.login-page__text-meta,
+.login-page__text-coin {
+  position: absolute;
+  color: transparent;
+  font-size: 550px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--accent);
+  font-family: $font-family-philosopher;
+  z-index: -1;
+}
+
+.login-page__text-meta {
+  top: -383px;
+  left: -190px;
+}
+
+.login-page__text-coin {
+  top: 10px;
+  left: 250px;
+}
+
+.login-page__circle1,
+.login-page__circle2 {
+  position: absolute;
+}
+
+.login-page__circle1 {
+  width: 700px;
+  height: 700px;
+  top: 245px;
+  left: -550px;
+  border-radius: 50%;
+  filter: blur(250px);
+  z-index: -2;
+}
+
+.login-page__circle2 {
+  width: 500px;
+  height: 500px;
+  top: -250px;
+  left: 800px;
+  border-radius: 50%;
+  filter: blur(250px);
+  z-index: -2;
+}
+
+/*============*/
+
+.sing-up-page {
+  max-width: 390px;
+  font-family: $font-family-inter;
+  letter-spacing: -0.37px;
+  position: relative;
+}
+
+.sing-up-page__login,
+.sing-up-page__sing-up {
+  font-size: 32px;
+  line-height: 28px;
+  font-weight: 700;
+  font-family: $font-family-philosopher;
+}
+
+
+.sing-up-page__sing-up {
+  height: 35px;
+  @extend .gradient-background;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sing-up-page__links {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 25px;
+}
+
+.form-sing-up-page__label-email,
+.form-sing-up-page__label-password,
+.form-sing-up-page__label-referral-id,
+.form-sing-up-page__label-username,
+.form-sing-up-page__label-display-name,
+.form-sing-up-page__label-confirm-password {
+  margin-bottom: 10px;
+  color:var(--text-color);
+  cursor: pointer;
+  display: inline-block;
+}
+
+.form-sing-up-page__input-email,
+.form-sing-up-page__input-referral-id {
+  margin-bottom: 25px;
+}
+
+.form-sing-up-page__button-submit {
+  font-size: 20px;
+  padding: 18px 0;
+  width: 100%;
+  border-radius: 50px;
+  color: $dk-md-text;
+  border: none;
+}
+
+.form-sing-up-page__input-password,
+.form-sing-up-page__input-email,
+.form-sing-up-page__input-referral-id,
+.form-sing-up-page__input-username,
+.form-sing-up-page__input-display-name,
+.form-sing-up-page__input-confirm-password {
+  border-radius: 50px;
+  width: 100%;
+  background-color: $dk-md-text;
+  padding: 20px;
+  border: none;
+}
+
+.form-sing-up-page__user-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.form-sing-up-page__password-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 50px;
+}
+
+.form-sing-up-page__input-password:focus,
+.form-sing-up-page__input-email:focus,
+.form-sing-up-page__input-referral-id:focus,
+.form-sing-up-page__input-username:focus,
+.form-sing-up-page__input-display-name,
+.form-sing-up-page__input-confirm-password:focus {
+  outline: inherit;
+}
+
+.sing-up-page__form {
+  margin-bottom: 20px;
+}
+
+.sing-up-page__text-meta,
+.sing-up-page__text-coin {
+  position: absolute;
+  color: transparent;
+  font-size: 550px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--accent);
+  font-family: $font-family-philosopher;
+  z-index: -1;
+}
+
+.sing-up-page__text-meta {
+  top: -260px;
+  left: -190px;
+}
+
+.sing-up-page__text-coin {
+  top: 133px;
+  left: 250px;
+}
+
+.sing-up-page__circle1,
+.sing-up-page__circle2 {
+  position: absolute;
+}
+
+.sing-up-page__circle1 {
+  width: 700px;
+  height: 700px;
+  top: 360px;
+  left: -500px;
+  border-radius: 50%;
+  filter: blur(250px);
+  z-index: -2;
+}
+
+.sing-up-page__circle2 {
+  width: 500px;
+  height: 500px;
+  top: -125px;
+  left: 800px;
+  border-radius: 50%;
+  filter: blur(250px);
+  z-index: -2;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 780px) {
+  .login-page-container {
+    align-self: center;
+    justify-content: center;
+    padding: 15px 15px 15px 15px;
+  }
+
+  .login-page__links,
+  .sing-up-page__links {
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .login-page,
+  .sing-up-page {
+    height: fit-content;
+  }
+}

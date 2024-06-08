@@ -1,0 +1,93 @@
+@import '../../../styles/styles';
+
+
+.footer{
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 50px 0;
+}
+
+.footer .btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  //background: linear-gradient(90deg, #A741E9 0%, #E93B7A 100%);
+  @extend .gradient-background;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  width: 100%;
+  height: 60px;
+  //margin-bottom: 20px;
+  font-family: $font-family-inter;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.footer .btn-icon {
+  height: 30px;
+  width: 26.45px;
+}
+
+.footer .btn-text{
+  font-size: 20px;
+  font-weight: 400;
+  min-width: 125px;
+}
+
+.footer span{
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 300;
+  min-width: 125px;
+}
+
+
+
+.footer .footer-heading {
+  font-family: $font-family-inter;
+  font-weight: 500;
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+.footer ul {
+  font-family: $font-family-inter;
+  font-weight: 200;
+  font-size: 20px;
+  list-style: none;
+  padding: 0;
+}
+.footer ul li {
+  margin-bottom: 0.5rem;
+}
+.footer ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+//------------
+.small-footer {
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.background-circle {
+  position: absolute;
+  filter: blur(240px);
+  z-index: 0;
+  opacity: 0.7;
+}
+.circle1 {
+  width: 900px;
+  height: 500px;
+  left: 20%;
+}
+
+.copyright {
+  text-align: center;
+  margin: 14px 0;
+}

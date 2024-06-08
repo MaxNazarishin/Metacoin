@@ -1,0 +1,52 @@
+@import '../../../styles/styles';
+
+body {
+  position: relative;
+  overflow: hidden;
+}
+.background-circle {
+  position: absolute;
+  filter: blur(180px);
+  z-index: 0;
+  opacity: 1;
+}
+.circle1 {
+  width: 700px;
+  height: 700px;
+  top: 15%;
+  left: -30%;
+}
+.circle2 {
+  width: 600px;
+  height: 600px;
+  top: -15%;
+  right: -25%;
+}
+
+.circle3 {
+  width: 550px;
+  height: 550px;
+  top: 50%;
+  right: -35%;
+}
+
+.circle4 {
+  width: 500px;
+  height: 500px;
+  top: 75%;
+  left: -10%;
+}
+
+.circle5 {
+  width: 500px;
+  height: 500px;
+  top: 95%;
+  left: 80%;
+}
+
+.container {
+  position: relative;
+  min-height: 2200px;
+  z-index: 1;
+  background-color: transparent !important;
+}

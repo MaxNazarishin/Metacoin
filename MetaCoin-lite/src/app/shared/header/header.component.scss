@@ -1,0 +1,118 @@
+@import '../../../styles/styles';
+
+.nav-link {
+  @extend .gradient-text;
+  font-size: 16px;
+  font-family: $font-family-roboto;
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+.arrow {
+  color: var(--accent);
+}
+
+.language, .settings {
+  margin: 0 14px 0 0;
+  padding-bottom: 3px;
+  align-content: center;
+  color: #B7AFFE;
+}
+
+.language:hover, .settings:hover {
+  color: var(--accent);
+}
+
+//-----------------
+.custom-switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 24px;
+}
+
+.custom-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  right: 3px;
+  bottom: 3px;
+  background-color: var(--card-bg);
+  transition: 0.4s;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+input:not(checked) + .slider {
+  @extend .gradient-background;
+}
+
+input:checked + .slider:before {
+  transform: translateX(-20px);
+  z-index: 1;
+}
+
+
+/* Custom icons */
+.slider::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 15px;
+  height: 14px;
+  background: url('/assets/img/icons/switch-head-sun.svg') no-repeat center center;
+  background-size: contain;
+  transition: opacity 0.4s;
+  opacity: 1;
+
+}
+
+input:checked + .slider::after {
+  width: 15px;
+  height: 14px;
+  right: 5px;
+  left: auto;
+  background: url('/assets/img/icons/switch-head-moon.svg') no-repeat center center;
+  background-size: cover;
+  opacity: 1;
+}
+
+//-------------
+.btn-primary {
+  border: none;
+  border-radius: 50px;
+  width: 112px;
+  height: 24px;
+  font-size: 12px;
+  font-family: $font-family-inter;
+  padding: 0;
+  color: var(--card-bg);
+  align-content: center;
+
+  &:hover {
+    @extend .gradient-background;
+  }
+
+}
