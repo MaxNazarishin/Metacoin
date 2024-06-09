@@ -5,11 +5,13 @@ body {
   overflow: hidden;
 }
 
+//--------------------------------------
 .background-circle {
   position: absolute;
   filter: blur(240px);
   z-index: 0;
   opacity: 1;
+  border-radius: 50%;
 }
 
 .circle1 {
@@ -17,6 +19,7 @@ body {
   height: 700px;
   top: 15%;
   left: -10%;
+
 }
 
 .circle2 {
@@ -47,12 +50,13 @@ body {
   left: 60%;
 }
 
+//--------------------------------------
 .container {
   position: relative;
   min-height: 2200px;
   z-index: 1;
   background-color: transparent !important;
-  font-family: "Inter", sans-serif;
+  font-family: $font-family-inter;
 }
 
 .container__text-box {
@@ -79,13 +83,14 @@ body {
   color: var(--text-color);
 }
 
-.container-bottom-link-box {
+.container-bottom-link-box,
+.container-bottom-link-box a {
   text-decoration: none;
 }
 
 .container-top-link-1 {
   font-size: 14px;
-  color: #ffffff;
+  color: $dk-md-text;
   padding: 14px 58px;
   width: fit-content;
   border-radius: 50px;
@@ -94,6 +99,7 @@ body {
 .trending-container__text {
   font-size: 36px;
   font-weight: 700;
+  @extend .gradient-text-static
 }
 
 .trending-container__text-box {
@@ -114,7 +120,7 @@ body {
 }
 
 .container__trending-element {
-  background-color: rgba(77, 21, 88, 0.705);
+  @extend .color-background-5;
   padding: 5px;
   width: 220px;
   border-radius: 5px 5px 5px 35px;
@@ -132,10 +138,16 @@ body {
   color: $warning-color;
 }
 
+.list-element-text3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: $confirmation-color;
+}
+
 .list-element-box-text1 {
   font-size: 16px;
   font-weight: 700;
-  color: white;
+  color: var(--text-color);
 }
 
 .container__list-element-text-box {
@@ -156,9 +168,12 @@ body {
 }
 
 .list-box-element2-background {
-  background-color: rgb(65, 26, 83);
+  @extend .color-background-8;
   padding: 22px 15px;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .list-box-element2 {
@@ -169,6 +184,7 @@ body {
 .popular-markets__text {
   font-size: 36px;
   font-weight: 700;
+  @extend .gradient-text-static
 }
 
 .popular-markets__text-box {
@@ -188,10 +204,11 @@ body {
   display: grid;
   grid-template-columns: 1.4fr 0.8fr 0.8fr 0.8fr 1.2fr;
   gap: 25px 20px;
-  background-color: aqua;
+  @extend .color-background-5;
   padding: 25px 30px;
   min-width: 680px;
   border-radius: 10px;
+  margin: 6px;
 }
 
 .grid-item:nth-child(5n+7),
@@ -235,9 +252,9 @@ body {
 }
 
 .grid-item {
-  background-color: #f0f0f0;
+  //background-color: #f0f0f0;
   text-align: right;
-  color: black;
+  color: var(--text-color);
 }
 
 .coin-text-grid-item__text1 {
@@ -250,7 +267,7 @@ body {
 }
 
 .container-button-view-more-link-1 {
-  color: #ffffff;
+  color: $wt-md-white;
   padding: 14px 58px;
   width: fit-content;
   border-radius: 50px;
@@ -260,11 +277,17 @@ body {
 
   span {
     font-size: 14px;
+    height: 17px;
   }
 }
 
 .container-button-view-more {
   text-decoration: none;
+}
+
+.container__button-start-now {
+  display: flex;
+  justify-content: left;
 }
 
 .container__button-view-more {
@@ -296,6 +319,7 @@ body {
   flex-direction: column;
   align-items: center;
   flex: 1 1 1px;
+  @extend .gradient-text-static
 }
 
 .information-apps__list {

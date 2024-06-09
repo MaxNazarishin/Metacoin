@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,9 @@ export class ThemeService {
     const savedTheme = localStorage.getItem('dark-theme');
     if (savedTheme) {
       this.darkTheme = JSON.parse(savedTheme);
-      this.updateTheme();
+      // this.updateTheme();
     }
+    this.updateTheme();
   }
 
   isDarkTheme(): boolean {
@@ -25,6 +26,7 @@ export class ThemeService {
     localStorage.setItem('dark-theme', JSON.stringify(this.darkTheme));
   }
 
+  //Если будет проблема первичной инициализации убрать private
   private updateTheme(): void {
     const body = document.body;
     if (this.darkTheme) {

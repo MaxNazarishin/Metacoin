@@ -17,13 +17,10 @@ body {
 .page-404 {
   padding: 10px;
   position: relative;
-  color: transparent;
-  font-size: 112px;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: var(--accent);
+  font-size: 128px;
   font-family: $font-family-philosopher;
-  text-transform: uppercase;
-
+  text-align: center;
+  @extend .gradient-text;
 }
 
 .background-circle {
@@ -57,19 +54,3 @@ body {
     min-height: 450px;
   }
 }
-
-.container-bottom-link-box {
-  text-decoration: none;
-  z-index: 1;
-  position: relative;
-}
-
-.container-top-link-1 {
-  font-size: 14px;
-  color: $wt-md-white;
-  padding: 14px 58px;
-  width: fit-content;
-  border-radius: 50px;
-  display: inline-block;
-}
-

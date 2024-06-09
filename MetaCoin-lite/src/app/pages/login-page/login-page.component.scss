@@ -36,7 +36,7 @@
 .login-page__sing-up {
   height: 35px;
   background-color: $wt-md-text;
-  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -74,6 +74,8 @@
   border-radius: 50px;
   color: $wt-md-white;
   border: none;
+  text-decoration: none;
+  text-align: center;
 }
 
 .form-login-page__input-password,
@@ -81,7 +83,7 @@
   border-radius: 50px;
   width: 100%;
   padding: 20px;
-  // border: none;
+  border: none;
 }
 
 .form-login-page__input-password:focus,
@@ -186,7 +188,7 @@
 .sing-up-page__sing-up {
   height: 35px;
   @extend .gradient-background;
-  background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -232,7 +234,7 @@
   width: 100%;
   background-color: $dk-md-text;
   padding: 20px;
-  // border: none;
+  border: none;
 }
 
 .form-sing-up-page__user-box {
@@ -313,6 +315,21 @@
 .hide {
   display: none;
 }
+
+.form-login-page__button-submit,
+.form-sing-up-page__input-confirm-password,
+.form-sing-up-page__input-password,
+.form-sing-up-page__input-email,
+.form-sing-up-page__input-display-name,
+.form-sing-up-page__input-username,
+.form-sing-up-page__input-referral-id,
+.form-login-page__input-password,
+.form-login-page__input-email {
+  box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+
 
 @media screen and (max-width: 780px) {
   .login-page-container {

@@ -24,8 +24,8 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/login-page/login-page.component').then(m => m.LoginPageComponent)
   },
   {
-    path: 'signup-page',
-    loadComponent: () => import('./pages/signup-page/signup-page.component').then(m => m.SignupPageComponent)
+    path: 'final-page',
+    loadComponent: () => import('./pages/final-page/final-page.component').then(m => m.FinalPageComponent)
   },
   //Страница битой ссылки
   {

@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: space-around;
   //background: linear-gradient(90deg, #A741E9 0%, #E93B7A 100%);
-  @extend .gradient-background;
+  @extend .gradient-background-static;
   border: none;
   border-radius: 8px;
   color: #ffffff;

@@ -1,4 +1,7 @@
-import {Component} from '@angular/core';
+import {
+  Component
+  // ,OnInit
+} from '@angular/core';
 import {ThemeService} from "../../services/theme.service";
 import {NgClass} from "@angular/common";
 
@@ -11,8 +14,17 @@ import {NgClass} from "@angular/common";
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
-export class HeaderComponent {
-  constructor(private themeService: ThemeService) {}
+export class HeaderComponent
+  // implements OnInit
+{
+  constructor(private themeService: ThemeService) {
+  }
+
+  //Если будет проблема первичной инициализации расскоментить
+  // ngOnInit(): void {
+  //   // Инициализация темы при запуске приложения
+  //   this.themeService.updateTheme();
+  // }
 
   toggleTheme(): void {
     this.themeService.toggleTheme();

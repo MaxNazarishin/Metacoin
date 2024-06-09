@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+
 // Глобальные переменные для шрифтов
 
 $font-family-roboto: 'Roboto', sans-serif;
@@ -25,10 +26,11 @@ $dk-md-card-bg: #210B54; // Черный для фона карточек
 $wt-md-background: #f6ffee; // Основной цвет фона
 $wt-md-accent-light: #E86EA0; // Розовый акцент
 $wt-md-accent: #BA28FF; // Ярко-фиолетовый акцент
-$wt-md-text: #998bb0; // Темно-серый для текста
+$wt-md-text: #4E5573; // Темно-серый для текста
 $wt-md-highlight: #FEF6A5; // Светло-желтый для подсветок
 $wt-md-white: #FFFDFA; // Белый для фона
 
 // Цвета для подтверждения и предупреждения, общие для обоих стилей
 $confirmation-color: #23A757; // Зеленый для подтверждения
 $warning-color: #DA1414; // Красный для предупреждения
+

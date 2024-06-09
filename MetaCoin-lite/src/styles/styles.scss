@@ -1,18 +1,19 @@
-//Подключение библиотек
+// Подключение библиотек
 @import 'variables';
 @import 'mixins';
-//@import "../../node_modules/bootstrap/scss/bootstrap";
+// @import "../../node_modules/bootstrap/scss/bootstrap";
 
-:root {
-  //цвет по умолчанию черная палитра
+:root { //цвет по умолчанию черная палитра
   --background-color: #{$dk-md-background};
   --accent-light: #{$dk-md-accent-light};
   --accent: #{$dk-md-accent};
   --text-color: #{$dk-md-text};
   --header-bg: #{$dk-md-header-bg};
   --card-bg: #{$dk-md-card-bg};
+  --container-background-color-main: #{$dk-md-background};
 }
 
+// Темные и светлые темы
 body.dark-theme {
   --background-color: #{$dk-md-background};
   --accent-light: #{$dk-md-accent-light};
@@ -20,6 +21,7 @@ body.dark-theme {
   --text-color: #{$dk-md-text};
   --header-bg: #{$dk-md-header-bg};
   --card-bg: #{$dk-md-card-bg};
+  --container-background-color-main: #{$dk-md-background};
 }
 
 body.light-theme {
@@ -29,18 +31,20 @@ body.light-theme {
   --text-color: #{$wt-md-text};
   --header-bg: #{$wt-md-highlight};
   --card-bg: #{$wt-md-white};
+  --container-background-color-main: #{$wt-md-background};
 }
 
+// Глобальные переменные
 :root {
-  --container-width-max:
-    1600px;
-  //1440px;
+  --container-width-max: 1600px;
 }
 
+// Стили для контейнера
 .container {
   max-width: 960px;
 }
 
+// Основные стили для body
 body {
   background-color: var(--background-color) !important;
   color: var(--text-color) !important;
@@ -48,19 +52,42 @@ body {
   margin: 0 auto !important;
 }
 
+// Стили для различных элементов
 :host {
 
-  //Для кнопок и фона
-  body.dark-theme & .gradient-background {
+  // Для цвета фона 50%
+  body.dark-theme & .color-background-5 {
+    background: rgba($dk-md-background, 0.5);
+  }
+
+  body.light-theme & .color-background-5 {
+    background: rgba($wt-md-background, 0.5);
+  }
+
+  // Для цвета фона 80%
+  body.dark-theme & .color-background-8 {
+    background: rgba($dk-md-background, 0.8);
+  }
+
+  body.light-theme & .color-background-8 {
+    background: rgba($wt-md-background, 0.8);
+  }
+
+  // Для кнопок и фона
+  body.dark-theme & .gradient-background,
+  body.dark-theme & .gradient-background-static
+  {
     background: linear-gradient(78deg, rgba($dk-md-accent-light, 1) 0%, rgba($dk-md-accent, 1) 100%);
   }
 
-  body.light-theme & .gradient-background {
+  body.light-theme & .gradient-background,
+  body.light-theme & .gradient-background-static{
     background: linear-gradient(78deg, rgba($wt-md-accent, 1) 0%, rgba($wt-md-accent-light, 1) 100%);
   }
 
-  //Для кнопок и фона :hover
-  body.dark-theme & .gradient-background:hover {
+  // Для кнопок и фона :hover
+  body.dark-theme & .gradient-background:hover,
+  {
     background: linear-gradient(78deg, rgba($dk-md-accent, 1) 0%, rgba($dk-md-accent-light, 1) 100%);
   }
 
@@ -68,35 +95,35 @@ body {
     background: linear-gradient(78deg, rgba($wt-md-accent-light, 1) 0%, rgba($wt-md-accent, 1) 100%);
   }
 
-  //Для текста
-  body.dark-theme & .gradient-text {
+  // Для текста
+  body.dark-theme & .gradient-text,
+  body.dark-theme & .gradient-text-static {
     background: linear-gradient(78deg, rgba($dk-md-accent, 1) 0%, rgba($dk-md-accent-light, 1) 100%);
-
-    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  body.light-theme & .gradient-text {
+  body.light-theme & .gradient-text,
+  body.light-theme & .gradient-text-static {
     background: linear-gradient(78deg, rgba($wt-md-accent-light, 1) 0%, rgba($wt-md-accent, 1) 100%);
-    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  //Для текста :hover
+  // Для текста :hover
   body.dark-theme & .gradient-text:hover {
     background: linear-gradient(78deg, rgba($dk-md-accent-light, 1) 0%, rgba($dk-md-accent, 1) 100%);
-    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   body.light-theme & .gradient-text:hover {
     background: linear-gradient(78deg, rgba($wt-md-accent, 1) 0%, rgba($wt-md-accent-light, 1) 100%);
-
-    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  //Для кружков
+  // Для кружков
   body.dark-theme & .circle1,
   body.dark-theme & .circle3,
   body.dark-theme & .circle5,
@@ -126,12 +153,28 @@ body {
   body.light-theme & .sing-up-page__circle2 {
     background-color: #B7AFFE;
   }
+
+
 }
 
+// Стили для теней
 .shadow-box {
   padding: 0 5px;
   box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.25);
-  /* Тень только снизу, короче ширины блока */
+  z-index: 1;
+  height: 100%;
+}
+
+.shadow-box-sm-1 {
+  padding: 0 2px;
+  box-shadow: 2px 4px 4px -2px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  height: 100%;
+}
+
+.shadow-box-sm-2 {
+  padding: 0 2px;
+  box-shadow: 2px 4px 4px -2px rgba(0, 0, 0, 0.2);
   z-index: 1;
   height: 100%;
 }
