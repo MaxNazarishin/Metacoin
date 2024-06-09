@@ -1,0 +1,267 @@
+@import '../../../styles/styles';
+
+body {
+   position: relative;
+   overflow: hidden;
+}
+
+.background-circle {
+   position: absolute;
+   filter: blur(160px);
+   z-index: 0;
+   opacity: 1;
+}
+
+.circle1 {
+   width: 700px;
+   height: 700px;
+   top: 15%;
+   left: -30%;
+   border-radius: 50%;
+}
+
+.circle2 {
+   width: 600px;
+   height: 600px;
+   top: -15%;
+   right: -25%;
+   border-radius: 50%;
+}
+
+.container {
+   max-width: 1440px;
+   position: relative;
+   min-height: 890px;
+   z-index: 1;
+   background-color: transparent !important;
+}
+
+.box-1-element__part-1 {
+   display: flex;
+   gap: 15px;
+   align-items: center;
+   margin-bottom: 12px;
+}
+
+.box-1-element-part__1 {
+   width: 30px;
+}
+
+.box-1-element-part__2 {
+   font-size: 15px;
+   font-weight: 500;
+}
+
+.box-1-element__1 {
+   display: flex;
+   flex-direction: column;
+}
+
+.box-1-element__part-2 {
+   font-size: 20px;
+   font-weight: 700;
+   line-height: 1;
+   margin-bottom: 12px;
+}
+
+.box-1-element__part-3 {
+   font-size: 13px;
+   font-weight: 300;
+   line-height: 1;
+   margin-bottom: 12px;
+}
+
+.box-1-element__part-4,
+.box-1-element__part-5 {
+   font-size: 16px;
+   line-height: 24px;
+}
+
+.box-1-element__part-5 {
+   color: $warning-color;
+}
+
+.box-2-element__part-1 {
+   font-size: 13px;
+   font-weight: 300;
+   line-height: 1;
+   margin-bottom: 4px;
+}
+
+.box-2-element__part-2,
+.box-2-element__part-3 {
+   font-size: 16px;
+   line-height: 24px;
+}
+
+.box-2-element__part-3 {
+   color: $warning-color;
+}
+
+.box-2-element__2 {
+   display: flex;
+   flex-direction: column;
+   align-items: end;
+}
+
+.container__element {
+   @extend .color-background-5;
+   width: 324px;
+   display: flex;
+   justify-content: space-between;
+   padding: 8px;
+   border-radius: 5px;
+}
+
+.box-2-element__1 {
+   @extend .color-background-8;
+   padding: 23px 16px;
+   border-radius: 5px;
+   margin-bottom: 5px;
+
+   img {
+      width: 117px;
+      height: 31px;
+   }
+}
+
+.container__list {
+   display: flex;
+   gap: 40px;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.container__inform-four-elem {
+   margin-top: 24px;
+   margin-bottom: 10px;
+}
+
+.container__input-box {
+   display: flex;
+   justify-content: end;
+   align-items: center;
+   position: relative;
+   margin-bottom: 10px;
+}
+
+.container-input-box__input {
+   border-radius: 50px;
+   width: 240px;
+   height: 40px;
+   padding-left: 30px;
+   padding-right: 40px;
+   border: none;
+   color: white;
+   @extend .color-background-5;
+}
+
+.container-input-box__input:focus {
+   outline: none;
+}
+
+.container-input-box__loupe {
+   position: absolute;
+   right: 18px;
+   filter: invert(100%) brightness(1000%);
+}
+
+/*============*/
+
+
+.container__table-coin {
+   overflow: auto;
+   margin-bottom: 50px;
+   position: relative;
+}
+
+.container__color-first-row {
+   position: absolute;
+   top: 0;
+   left: 0;
+   @extend .color-background-8;
+   min-width: 1415px;
+   height: 85px;
+   z-index: -1;
+   border-radius: 10px 10px 0px 0px;
+}
+
+.container__grid {
+   display: grid;
+   grid-template-columns: 1.8fr 0.9fr 0.8fr 0.9fr 0.9fr 0.9fr 0.9fr 0.9fr;
+   gap: 30px 40px;
+   @extend .color-background-5;
+   padding: 30px 40px;
+   min-width: 1415px;
+   border-radius: 10px;
+}
+
+.grid-item {
+   display: flex;
+   align-items: center;
+}
+
+.grid-item:nth-child(8n+9) {
+   gap: 20px;
+}
+
+.grid-item:nth-child(8n+10) {
+   gap: 15px;
+}
+
+.grid-item:nth-child(1) {
+   gap: 15px;
+}
+
+.grid-item:nth-child(1),
+.grid-item:nth-child(2),
+.grid-item:nth-child(3),
+.grid-item:nth-child(4),
+.grid-item:nth-child(5),
+.grid-item:nth-child(6),
+.grid-item:nth-child(7),
+.grid-item:nth-child(8) {
+   margin-bottom: 30px;
+}
+
+.grid-item:nth-child(8n+3),
+.grid-item:nth-child(8n+4),
+.grid-item:nth-child(8n+5),
+.grid-item:nth-child(8n+6),
+.grid-item:nth-child(8n+7),
+.grid-item:nth-child(8n+8) {
+   justify-content: end;
+}
+
+.grid-item:nth-child(8n+10),
+.grid-item:nth-child(8n+11),
+.grid-item:nth-child(8n+12),
+.grid-item:nth-child(8n+13),
+.grid-item:nth-child(8n+14),
+.grid-item:nth-child(8n+15),
+.grid-item:nth-child(8n+16) {
+   font-size: 14px;
+}
+
+.grid-item-box-text {
+   display: flex;
+   gap: 10px;
+   align-items: center;
+}
+
+.grid-item-box-text__1 {
+   font-weight: 600;
+}
+
+.grid-item-box-text__2 {
+   font-weight: 600;
+   font-size: 14px;
+}
+
+.color-text-red {
+   color: red;
+}
+
+.color-text-green {
+   color: green;
+}
