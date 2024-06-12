@@ -6,6 +6,7 @@ body {
 }
 
 //--------------------------------------
+
 .background-circle {
   position: absolute;
   filter: blur(240px);
@@ -54,7 +55,7 @@ body {
 .container {
   position: relative;
   min-height: 2200px;
-  z-index: 1;
+  z-index: 0;
   background-color: transparent !important;
   font-family: $font-family-inter;
 }
@@ -171,9 +172,6 @@ body {
   @extend .color-background-8;
   padding: 22px 15px;
   border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .list-box-element2 {
@@ -193,7 +191,7 @@ body {
   margin-bottom: 70px;
 }
 
-/*=========*/
+//--------------------------------------
 
 .container__popular-markets {
   overflow: auto;
@@ -206,7 +204,7 @@ body {
   gap: 25px 20px;
   @extend .color-background-5;
   padding: 25px 30px;
-  min-width: 680px;
+  min-width: 900px;
   border-radius: 10px;
   margin: 6px;
 }
@@ -333,7 +331,8 @@ body {
   margin-bottom: 150px;
 }
 
-/*=========*/
+//--------------------------------------
+
 
 @media screen and (max-width: 750px) {
 

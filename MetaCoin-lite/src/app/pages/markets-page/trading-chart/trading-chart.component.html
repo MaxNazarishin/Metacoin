@@ -1,0 +1,10 @@
+<div class="container-fluid d-flex flex-column justify-content-center p-0">
+  <div class="container-fluid p-0 mb-3">
+    <app-header-trading-chart [name]="name" [icon]="icon" [price]="price" ></app-header-trading-chart>
+  </div>
+  <div class="content d-flex flex-grow-1">
+    <app-instruments-trading-chart></app-instruments-trading-chart>
+    <app-barchart></app-barchart>
+    <app-prices-trading-chart [token_price]="price"></app-prices-trading-chart>
+  </div>
+</div>

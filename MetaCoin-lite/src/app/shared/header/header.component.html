@@ -1,48 +1,102 @@
 <nav class="navbar navbar-expand-lg shadow-box"
-  [ngClass]="{'navbar-dark': isDarkTheme(), 'navbar-light': !isDarkTheme()}">
+     [ngClass]="{'navbar-dark': isDarkTheme(), 'navbar-light': !isDarkTheme()}">
   <div class="container-fluid" style=" height: 60px;">
     <a class="navbar-brand" href="#">
       <img src="assets/img/Metacoin-Logo.svg" alt="Metacoin">
     </a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" (click)="toggleDropdownMenu()" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <div id="dropdown-menu" class="dropdown-menu" [class.active]="isDropdownMenuActive">
+      <button id="close-dropdown" class="close-dropdown" (click)="toggleDropdownMenu()">&times;</button>
+      <div class="dropdown-footer d-flex flex-column align-items-center">
+        <a class="nav-link custom-nav-link" href="/#">
+          <img src="assets/img/Metacoin-Logo.svg" alt="Metacoin" class="logo">
+        </a>
+        <div class="footer-settings d-flex">
+          <div class="d-flex align-items-center">
+            <a class="language" href="#">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7.4925 0C3.3525 0 0 3.36 0 7.5C0 11.64 3.3525 15 7.4925 15C11.64 15 15 11.64 15 7.5C15 3.36 11.64 0 7.4925 0ZM12.69 4.5H10.4775C10.2428 3.57109 9.89518 2.67442 9.4425 1.83C10.8106 2.301 11.9634 3.24879 12.69 4.5ZM7.5 1.53C8.1225 2.43 8.61 3.4275 8.9325 4.5H6.0675C6.39 3.4275 6.8775 2.43 7.5 1.53ZM1.695 9C1.575 8.52 1.5 8.0175 1.5 7.5C1.5 6.9825 1.575 6.48 1.695 6H4.23C4.17 6.495 4.125 6.99 4.125 7.5C4.125 8.01 4.17 8.505 4.23 9H1.695ZM2.31 10.5H4.5225C4.7625 11.4375 5.1075 12.3375 5.5575 13.17C4.18798 12.7016 3.03437 11.7531 2.31 10.5ZM4.5225 4.5H2.31C3.03437 3.24688 4.18798 2.29843 5.5575 1.83C5.10482 2.67442 4.75723 3.57109 4.5225 4.5ZM7.5 13.47C6.8775 12.57 6.39 11.5725 6.0675 10.5H8.9325C8.61 11.5725 8.1225 12.57 7.5 13.47ZM9.255 9H5.745C5.6775 8.505 5.625 8.01 5.625 7.5C5.625 6.99 5.6775 6.4875 5.745 6H9.255C9.3225 6.4875 9.375 6.99 9.375 7.5C9.375 8.01 9.3225 8.505 9.255 9ZM9.4425 13.17C9.8925 12.3375 10.2375 11.4375 10.4775 10.5H12.69C11.9634 11.7512 10.8106 12.699 9.4425 13.17ZM10.77 9C10.83 8.505 10.875 8.01 10.875 7.5C10.875 6.99 10.83 6.495 10.77 6H13.305C13.425 6.48 13.5 6.9825 13.5 7.5C13.5 8.0175 13.425 8.52 13.305 9H10.77Z"
+
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+            <a class="settings" href="#">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.8844 8.23242C12.9163 7.98954 12.9334 7.74495 12.9356 7.5C12.9334 7.25505 12.9163 7.01046 12.8844 6.76758L14.4701 5.52613C14.5417 5.47143 14.5906 5.39226 14.6075 5.30375C14.6244 5.21524 14.608 5.12361 14.5616 5.04639L13.0601 2.44264C13.0167 2.36454 12.9461 2.30504 12.8618 2.27536C12.7775 2.24568 12.6852 2.24787 12.6024 2.28151L10.7311 3.0359C10.3417 2.73871 9.91584 2.49257 9.46396 2.30348L9.18198 0.314958C9.16955 0.226967 9.12554 0.146499 9.05816 0.0885551C8.99078 0.0306107 8.90464 -0.000856839 8.81577 1.77524e-05H5.80553C5.71666 -0.000856839 5.63052 0.0306107 5.56314 0.0885551C5.49576 0.146499 5.45175 0.226967 5.43932 0.314958L5.15733 2.30348C4.70488 2.4914 4.27891 2.73762 3.89025 3.0359L2.01159 2.28151C1.92877 2.24787 1.83651 2.24568 1.75219 2.27536C1.66787 2.30504 1.59732 2.36454 1.55383 2.44264L0.0523663 5.04639C0.00593456 5.12361 -0.0103981 5.21524 0.00649277 5.30375C0.0233836 5.39226 0.0723123 5.47143 0.143919 5.52613L1.72595 6.76758C1.69417 7.01047 1.67705 7.25505 1.67468 7.5C1.67692 7.74495 1.69404 7.98954 1.72595 8.23242L0.143919 9.47387C0.0723123 9.52857 0.0233836 9.60774 0.00649277 9.69625C-0.0103981 9.78476 0.00593456 9.87639 0.0523663 9.95361L1.55383 12.5574C1.59732 12.6355 1.66787 12.695 1.75219 12.7246C1.83651 12.7543 1.92877 12.7521 2.01159 12.7185L3.88292 11.9641C4.27232 12.2613 4.69814 12.5074 5.15001 12.6965L5.43199 14.685C5.44443 14.773 5.48844 14.8535 5.55581 14.9114C5.62319 14.9694 5.70934 15.0009 5.7982 15H8.80112C8.88999 15.0009 8.97614 14.9694 9.04351 14.9114C9.11089 14.8535 9.1549 14.773 9.16734 14.685L9.44932 12.6965C9.90177 12.5086 10.3277 12.2624 10.7164 11.9641L12.5877 12.7185C12.6706 12.7521 12.7628 12.7543 12.8471 12.7246C12.9315 12.695 13.002 12.6355 13.0455 12.5574L14.547 9.95361C14.5934 9.87639 14.6097 9.78476 14.5928 9.69625C14.5759 9.60774 14.527 9.52857 14.4554 9.47387L12.8844 8.23242ZM7.30699 10.1294C6.78679 10.1301 6.27806 9.97652 5.84518 9.68804C5.4123 9.39956 5.07471 8.98916 4.87514 8.50876C4.67557 8.02837 4.62297 7.49957 4.72401 6.98928C4.82506 6.47899 5.07519 6.01013 5.44277 5.64204C5.81035 5.27395 6.27886 5.02316 6.78901 4.92141C7.29916 4.81965 7.82803 4.87151 8.3087 5.07041C8.78937 5.26932 9.20024 5.60633 9.48933 6.03881C9.77841 6.47129 9.93271 6.9798 9.93271 7.5C9.9332 7.84512 9.86563 8.18696 9.73389 8.50595C9.60215 8.82494 9.40882 9.11483 9.16495 9.35904C8.92108 9.60325 8.63146 9.79698 8.31266 9.92917C7.99385 10.0614 7.65211 10.1294 7.30699 10.1294V10.1294Z"
+                  fill="currentColor"/>
+              </svg>
+            </a>
+            <label class="custom-switch">
+              <input type="checkbox" id="themeSwitch1" (change)="toggleTheme()" [checked]="isDarkTheme()"/>
+              <label class="slider" for="themeSwitch"></label>
+            </label>
+            <a class="btn btn-primary ms-3 gradient-background" href="/login-page">Log In</a>
+          </div>
+        </div>
+      </div>
+      <ul class="dropdown-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/token-info-page">Finance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/page-404">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/trade-fault">Trade</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Wallet">Wallet</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/markets-page">Markets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/final-page">Campaigns</a>
+        </li>
+      </ul>
+    </div>
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link arrow" href="#">Finance
+          <a class="nav-link arrow" href="/token-info-page">Finance
             <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1L6.3125 6L11.625 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M1 1L6.3125 6L11.625 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link arrow" href="token-info-page">Products
+          <a class="nav-link arrow" href="/page-404">Products
             <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1L6.3125 6L11.625 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M1 1L6.3125 6L11.625 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link arrow" href="#">Trade
+          <a class="nav-link arrow" href="/trade-fault">Trade
             <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1L6.3125 6L11.625 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M1 1L6.3125 6L11.625 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Wallet</a>
+          <a class="nav-link" href="/Wallet">Wallet</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Markets</a>
+          <a class="nav-link" href="/markets-page">Markets</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link arrow" href="#">Campaigns
+          <a class="nav-link arrow" href="/final-page">Campaigns
             <svg width="13" height="7" viewBox="0 0 13 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1L6.3125 6L11.625 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M1 1L6.3125 6L11.625 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </a>
         </li>
@@ -52,25 +106,27 @@
           <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M7.4925 0C3.3525 0 0 3.36 0 7.5C0 11.64 3.3525 15 7.4925 15C11.64 15 15 11.64 15 7.5C15 3.36 11.64 0 7.4925 0ZM12.69 4.5H10.4775C10.2428 3.57109 9.89518 2.67442 9.4425 1.83C10.8106 2.301 11.9634 3.24879 12.69 4.5ZM7.5 1.53C8.1225 2.43 8.61 3.4275 8.9325 4.5H6.0675C6.39 3.4275 6.8775 2.43 7.5 1.53ZM1.695 9C1.575 8.52 1.5 8.0175 1.5 7.5C1.5 6.9825 1.575 6.48 1.695 6H4.23C4.17 6.495 4.125 6.99 4.125 7.5C4.125 8.01 4.17 8.505 4.23 9H1.695ZM2.31 10.5H4.5225C4.7625 11.4375 5.1075 12.3375 5.5575 13.17C4.18798 12.7016 3.03437 11.7531 2.31 10.5ZM4.5225 4.5H2.31C3.03437 3.24688 4.18798 2.29843 5.5575 1.83C5.10482 2.67442 4.75723 3.57109 4.5225 4.5ZM7.5 13.47C6.8775 12.57 6.39 11.5725 6.0675 10.5H8.9325C8.61 11.5725 8.1225 12.57 7.5 13.47ZM9.255 9H5.745C5.6775 8.505 5.625 8.01 5.625 7.5C5.625 6.99 5.6775 6.4875 5.745 6H9.255C9.3225 6.4875 9.375 6.99 9.375 7.5C9.375 8.01 9.3225 8.505 9.255 9ZM9.4425 13.17C9.8925 12.3375 10.2375 11.4375 10.4775 10.5H12.69C11.9634 11.7512 10.8106 12.699 9.4425 13.17ZM10.77 9C10.83 8.505 10.875 8.01 10.875 7.5C10.875 6.99 10.83 6.495 10.77 6H13.305C13.425 6.48 13.5 6.9825 13.5 7.5C13.5 8.0175 13.425 8.52 13.305 9H10.77Z"
-              fill="currentColor" />
+
+              fill="currentColor"
+            />
           </svg>
-          <!--          <img class="language" src="assets/img/icons/language-head.svg" alt="language">-->
         </a>
         <a class="settings" href="#">
           <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M12.8844 8.23242C12.9163 7.98954 12.9334 7.74495 12.9356 7.5C12.9334 7.25505 12.9163 7.01046 12.8844 6.76758L14.4701 5.52613C14.5417 5.47143 14.5906 5.39226 14.6075 5.30375C14.6244 5.21524 14.608 5.12361 14.5616 5.04639L13.0601 2.44264C13.0167 2.36454 12.9461 2.30504 12.8618 2.27536C12.7775 2.24568 12.6852 2.24787 12.6024 2.28151L10.7311 3.0359C10.3417 2.73871 9.91584 2.49257 9.46396 2.30348L9.18198 0.314958C9.16955 0.226967 9.12554 0.146499 9.05816 0.0885551C8.99078 0.0306107 8.90464 -0.000856839 8.81577 1.77524e-05H5.80553C5.71666 -0.000856839 5.63052 0.0306107 5.56314 0.0885551C5.49576 0.146499 5.45175 0.226967 5.43932 0.314958L5.15733 2.30348C4.70488 2.4914 4.27891 2.73762 3.89025 3.0359L2.01159 2.28151C1.92877 2.24787 1.83651 2.24568 1.75219 2.27536C1.66787 2.30504 1.59732 2.36454 1.55383 2.44264L0.0523663 5.04639C0.00593456 5.12361 -0.0103981 5.21524 0.00649277 5.30375C0.0233836 5.39226 0.0723123 5.47143 0.143919 5.52613L1.72595 6.76758C1.69417 7.01047 1.67705 7.25505 1.67468 7.5C1.67692 7.74495 1.69404 7.98954 1.72595 8.23242L0.143919 9.47387C0.0723123 9.52857 0.0233836 9.60774 0.00649277 9.69625C-0.0103981 9.78476 0.00593456 9.87639 0.0523663 9.95361L1.55383 12.5574C1.59732 12.6355 1.66787 12.695 1.75219 12.7246C1.83651 12.7543 1.92877 12.7521 2.01159 12.7185L3.88292 11.9641C4.27232 12.2613 4.69814 12.5074 5.15001 12.6965L5.43199 14.685C5.44443 14.773 5.48844 14.8535 5.55581 14.9114C5.62319 14.9694 5.70934 15.0009 5.7982 15H8.80112C8.88999 15.0009 8.97614 14.9694 9.04351 14.9114C9.11089 14.8535 9.1549 14.773 9.16734 14.685L9.44932 12.6965C9.90177 12.5086 10.3277 12.2624 10.7164 11.9641L12.5877 12.7185C12.6706 12.7521 12.7628 12.7543 12.8471 12.7246C12.9315 12.695 13.002 12.6355 13.0455 12.5574L14.547 9.95361C14.5934 9.87639 14.6097 9.78476 14.5928 9.69625C14.5759 9.60774 14.527 9.52857 14.4554 9.47387L12.8844 8.23242ZM7.30699 10.1294C6.78679 10.1301 6.27806 9.97652 5.84518 9.68804C5.4123 9.39956 5.07471 8.98916 4.87514 8.50876C4.67557 8.02837 4.62297 7.49957 4.72401 6.98928C4.82506 6.47899 5.07519 6.01013 5.44277 5.64204C5.81035 5.27395 6.27886 5.02316 6.78901 4.92141C7.29916 4.81965 7.82803 4.87151 8.3087 5.07041C8.78937 5.26932 9.20024 5.60633 9.48933 6.03881C9.77841 6.47129 9.93271 6.9798 9.93271 7.5C9.9332 7.84512 9.86563 8.18696 9.73389 8.50595C9.60215 8.82494 9.40882 9.11483 9.16495 9.35904C8.92108 9.60325 8.63146 9.79698 8.31266 9.92917C7.99385 10.0614 7.65211 10.1294 7.30699 10.1294V10.1294Z"
-              fill="currentColor" />
+              fill="currentColor"/>
           </svg>
 
         </a>
         <label class="custom-switch">
-          <input type="checkbox" id="themeSwitch" (change)="toggleTheme()" [checked]="isDarkTheme()" />
+          <input type="checkbox" id="themeSwitch" (change)="toggleTheme()" [checked]="isDarkTheme()"/>
           <label class="slider" for="themeSwitch"></label>
         </label>
         <a class="btn btn-primary ms-3 gradient-background" href="/login-page">Log In</a>
       </div>
     </div>
+
 
   </div>
 </nav>

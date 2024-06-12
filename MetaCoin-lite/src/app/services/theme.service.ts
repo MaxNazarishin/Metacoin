@@ -1,35 +1,38 @@
 import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
-  private darkTheme = false;
+  private darkTheme = new BehaviorSubject<boolean>(false);
 
   constructor() {
-    // Load theme from local storage or default to light theme
     const savedTheme = localStorage.getItem('dark-theme');
     if (savedTheme) {
-      this.darkTheme = JSON.parse(savedTheme);
-      // this.updateTheme();
+      this.darkTheme.next(JSON.parse(savedTheme));
     }
     this.updateTheme();
   }
 
+  getThemeObservable() {
+    return this.darkTheme.asObservable();
+  }
+
   isDarkTheme(): boolean {
-    return this.darkTheme;
+    return this.darkTheme.value;
   }
 
   toggleTheme(): void {
-    this.darkTheme = !this.darkTheme;
+    this.darkTheme.next(!this.darkTheme.value);
     this.updateTheme();
-    localStorage.setItem('dark-theme', JSON.stringify(this.darkTheme));
+    localStorage.setItem('dark-theme', JSON.stringify(this.darkTheme.value));
+    this.updateTheme();
   }
 
-  //Если будет проблема первичной инициализации убрать private
-  private updateTheme(): void {
+  updateTheme(): void {
     const body = document.body;
-    if (this.darkTheme) {
+    if (this.darkTheme.value) {
       body.classList.add('dark-theme');
       body.classList.remove('light-theme');
     } else {
@@ -37,5 +40,4 @@ export class ThemeService {
       body.classList.remove('dark-theme');
     }
   }
-
 }

@@ -1,0 +1,32 @@
+<div class="card mb-2">
+  <div class="card-body">
+    <div class="info-item mb-3 d-flex justify-content-between align-items-center">
+      <div>
+        <h6 class="info-title mb-0">Total Liquidity</h6>
+        <p class="info-value mb-0">{{ totalLiquidity.value }}</p>
+      </div>
+      <!-- changes color based based on the percentages drop or increase      -->
+      <span [ngClass]="{'text-success': totalLiquidity.change > 0, 'text-danger': totalLiquidity.change < 0}">
+        {{ totalLiquidity.change }}%
+      </span>
+    </div>
+    <div class="info-item mb-3 d-flex justify-content-between align-items-center">
+      <div>
+        <h6 class="info-title mb-0">24h Volume</h6>
+        <p class="info-value mb-0">{{ volume24h.value }}</p>
+      </div>
+      <span [ngClass]="{'text-success': volume24h.change > 0, 'text-danger': volume24h.change < 0}">
+        {{ volume24h.change }}%
+      </span>
+    </div>
+    <div class="info-item mb-3 d-flex justify-content-between align-items-center">
+      <div>
+        <h6 class="info-title mb-0">24h Fees</h6>
+        <p class="info-value mb-0">{{ fees24h.value }}</p>
+      </div>
+      <span [ngClass]="{'text-success': fees24h.change > 0, 'text-danger': fees24h.change < 0}">
+        {{ fees24h.change }}%
+      </span>
+    </div>
+  </div>
+</div>

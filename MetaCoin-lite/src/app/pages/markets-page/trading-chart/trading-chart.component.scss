@@ -1,0 +1,8 @@
+@import '../../../../styles/styles';
+
+.container-fluid {
+  @extend .color-background-5;
+  //background-color: rgba(39, 39, 63, 0.7) !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+
+}

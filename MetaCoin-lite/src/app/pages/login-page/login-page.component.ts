@@ -1,19 +1,18 @@
-import {Component} from '@angular/core';
-import {NgClass} from '@angular/common';
-import {Router} from "@angular/router";
+import { Component } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
   imports: [NgClass],
   templateUrl: './login-page.component.html',
-  styleUrl: './login-page.component.scss'
+  styleUrls: ['./login-page.component.scss']  // Виправлено styleUrl -> styleUrls
 })
 export class LoginPageComponent {
   isLoginPage: boolean = true;
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) { }
 
   showLoginPage() {
     this.isLoginPage = true;
@@ -23,7 +22,7 @@ export class LoginPageComponent {
     this.isLoginPage = false;
   }
 
-  // Метод для проверки формы и навигации
+  // Метод для перевірки форми та навігації
   submitForm(formId: string) {
     const form = document.getElementById(formId) as HTMLFormElement;
     if (form.checkValidity()) {
@@ -33,6 +32,15 @@ export class LoginPageComponent {
     }
   }
 
+  // Метод для перевірки збігу паролів
+  checkPasswords(passwordId: string, confirmPasswordId: string) {
+    const password = (document.getElementById(passwordId) as HTMLInputElement).value;
+    const confirmPassword = (document.getElementById(confirmPasswordId) as HTMLInputElement);
+
+    if (password !== confirmPassword.value) {
+      confirmPassword.setCustomValidity('Паролі не збігаються');
+    } else {
+      confirmPassword.setCustomValidity('');
+    }
+  }
 }
-
-

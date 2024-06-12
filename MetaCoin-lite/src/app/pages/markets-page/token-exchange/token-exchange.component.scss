@@ -1,0 +1,15 @@
+@import '../../../../styles/styles';
+
+.exchange-box {
+  border-radius: 0.5rem;
+}
+
+.card {
+  @extend .color-background-5;
+  color: var(--text-color) !important;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+

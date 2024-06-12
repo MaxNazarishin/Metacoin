@@ -1,19 +1,19 @@
 // Подключение библиотек
 @import 'variables';
-@import 'mixins';
 // @import "../../node_modules/bootstrap/scss/bootstrap";
 
-:root { //цвет по умолчанию черная палитра
-  --background-color: #{$dk-md-background};
-  --accent-light: #{$dk-md-accent-light};
-  --accent: #{$dk-md-accent};
-  --text-color: #{$dk-md-text};
-  --header-bg: #{$dk-md-header-bg};
-  --card-bg: #{$dk-md-card-bg};
-  --container-background-color-main: #{$dk-md-background};
-}
+//:root { //цвет по умолчанию черная палитра
+//  --background-color: #{$dk-md-background};
+//  --accent-light: #{$dk-md-accent-light};
+//  --accent: #{$dk-md-accent};
+//  --text-color: #{$dk-md-text};
+//  --header-bg: #{$dk-md-header-bg};
+//  --card-bg: #{$dk-md-card-bg};
+//  --container-background-color-main: #{$dk-md-background};
+//  --scroll-bar: #{$dk-md-card-bg};
+//}
 
-// Темные и светлые темы
+// Темная темы
 body.dark-theme {
   --background-color: #{$dk-md-background};
   --accent-light: #{$dk-md-accent-light};
@@ -22,8 +22,9 @@ body.dark-theme {
   --header-bg: #{$dk-md-header-bg};
   --card-bg: #{$dk-md-card-bg};
   --container-background-color-main: #{$dk-md-background};
+  --scroll-bar: #{$dk-md-scroll-bar};
 }
-
+// Светлая тема
 body.light-theme {
   --background-color: #{$wt-md-background};
   --accent-light: #{$wt-md-accent-light};
@@ -32,7 +33,10 @@ body.light-theme {
   --header-bg: #{$wt-md-highlight};
   --card-bg: #{$wt-md-white};
   --container-background-color-main: #{$wt-md-background};
+  --scroll-bar: #{$wt-md-scroll-bar};
 }
+
+//--------------------------------------
 
 // Глобальные переменные
 :root {
@@ -44,6 +48,8 @@ body.light-theme {
   max-width: 960px;
 }
 
+//--------------------------------------
+
 // Основные стили для body
 body {
   background-color: var(--background-color) !important;
@@ -54,34 +60,41 @@ body {
 
 // Стили для различных элементов
 :host {
-
   // Для цвета фона 50%
   body.dark-theme & .color-background-5 {
-    background: rgba($dk-md-background, 0.5);
+    background: rgba(#12022FFF, 0.5);
   }
 
   body.light-theme & .color-background-5 {
-    background: rgba($wt-md-background, 0.5);
+    background: rgba(#F3F3F3FF, 0.5);
   }
 
   // Для цвета фона 80%
   body.dark-theme & .color-background-8 {
-    background: rgba($dk-md-background, 0.8);
+    background: rgba($dk-md-card-bg, 0.8);
   }
 
   body.light-theme & .color-background-8 {
-    background: rgba($wt-md-background, 0.8);
+    background: rgba($dk-md-text, 0.8);
+  }
+
+  // Для цвета фона 100%
+  body.dark-theme & .color-background-10 {
+    background: rgba($dk-md-card-bg, 1);
+  }
+
+  body.light-theme & .color-background-10 {
+    background: rgba($dk-md-text, 1);
   }
 
   // Для кнопок и фона
   body.dark-theme & .gradient-background,
-  body.dark-theme & .gradient-background-static
-  {
+  body.dark-theme & .gradient-background-static {
     background: linear-gradient(78deg, rgba($dk-md-accent-light, 1) 0%, rgba($dk-md-accent, 1) 100%);
   }
 
   body.light-theme & .gradient-background,
-  body.light-theme & .gradient-background-static{
+  body.light-theme & .gradient-background-static {
     background: linear-gradient(78deg, rgba($wt-md-accent, 1) 0%, rgba($wt-md-accent-light, 1) 100%);
   }
 
@@ -154,7 +167,6 @@ body {
     background-color: #B7AFFE;
   }
 
-
 }
 
 // Стили для теней
@@ -178,3 +190,33 @@ body {
   z-index: 1;
   height: 100%;
 }
+
+//--------------------------------------
+
+/* Общий стиль скроллбара */
+.token-list::-webkit-scrollbar,
+.container__table-coin::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Стиль трека скроллбара */
+.token-list::-webkit-scrollbar-track,
+.container__table-coin::-webkit-scrollbar-track {
+  @extend .color-background-8;
+  //background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Стиль ползунка скроллбара */
+.token-list::-webkit-scrollbar-thumb,
+.container__table-coin::-webkit-scrollbar-thumb {
+  background: var(--text-color);
+  border-radius: 10px;
+}
+
+/* Ползунок при наведении */
+.token-list::-webkit-scrollbar-thumb:hover,
+.container__table-coin::-webkit-scrollbar-thumb:hover{
+  background: var(--scroll-bar);
+}
+
