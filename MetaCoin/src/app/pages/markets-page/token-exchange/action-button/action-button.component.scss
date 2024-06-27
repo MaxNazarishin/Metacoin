@@ -1,0 +1,13 @@
+@import '../../../../../styles/styles';
+
+.btn-gradient {
+  @extend .gradient-background-static;
+  color: $wt-md-white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  text-align: center;
+  font-family: $font-family-inter;
+  font-size: 13px;
+  font-weight: 400;
+}

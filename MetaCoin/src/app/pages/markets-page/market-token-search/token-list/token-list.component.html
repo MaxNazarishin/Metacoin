@@ -1,0 +1,5 @@
+<div class="token-list">
+  <div *ngFor="let token of tokens" class="token-item mb-3">
+    <app-token-item [icon]="token.icon" [name]="token.name" [amount]="token.amount"></app-token-item>
+  </div>
+</div>

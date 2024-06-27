@@ -1,0 +1,200 @@
+@import '../../../styles/styles';
+
+.nav-link {
+  @extend .gradient-text;
+  font-size: 16px;
+  font-family: $font-family-roboto;
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+.arrow {
+  color: var(--accent);
+}
+
+.language, .settings {
+  margin: 0 14px 0 0;
+  padding-bottom: 3px;
+  align-content: center;
+  color: #B7AFFE;
+}
+
+.language:hover, .settings:hover {
+  color: var(--accent);
+}
+
+//--------------------------------------
+
+.custom-switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 24px;
+}
+
+.custom-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  right: 3px;
+  bottom: 3px;
+  background-color: var(--card-bg);
+  transition: 0.4s;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+input:not(checked) + .slider {
+  @extend .gradient-background;
+}
+
+input:checked + .slider:before {
+  transform: translateX(-20px);
+  z-index: 1;
+}
+
+//--------------------------------------
+
+.slider::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 15px;
+  height: 14px;
+  background: url('/assets/img/icons/switch-head-sun.svg') no-repeat center center;
+  background-size: contain;
+  transition: opacity 0.4s;
+  opacity: 1;
+
+}
+
+input:checked + .slider::after {
+  width: 15px;
+  height: 14px;
+  right: 5px;
+  left: auto;
+  background: url('/assets/img/icons/switch-head-moon.svg') no-repeat center center;
+  background-size: cover;
+  opacity: 1;
+}
+
+//--------------------------------------
+
+.btn-primary {
+  border: none;
+  border-radius: 50px;
+  width: 112px;
+  height: 24px;
+  font-size: 12px;
+  font-family: $font-family-inter;
+  padding: 0;
+  color: var(--card-bg);
+  align-content: center;
+
+  &:hover {
+    @extend .gradient-background;
+  }
+
+}
+
+//--------------------------------------
+
+
+@media (max-width: 990px) {
+  .nav-link {
+    font-size: 24px;
+  }
+}
+
+#dropdown-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 990px;
+  @extend .color-background-8;
+  z-index: 1;
+  overflow-y: auto;
+  padding: 0;
+}
+
+#dropdown-menu.active {
+  display: block;
+}
+
+.close-dropdown {
+  position: absolute;
+  right: 20px;
+  top: -12px;
+  font-size: 3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  height: 47px;
+  align-items: center;
+}
+
+.dropdown-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-nav .nav-item {
+  border-bottom: var(--text-color) 1px solid;
+  border-top: var(--text-color) 1px solid;
+}
+
+
+.dropdown-nav .nav-link {
+  text-decoration: none;
+  display: block;
+  min-height: 47px;
+  padding: 15px;
+}
+
+.dropdown-footer {
+  padding: 30px 0;
+  text-align: center;
+  background-color: var(--background-color);
+  align-content: center;
+}
+
+.dropdown-footer .logo {
+  margin: 10px 0;
+  width: 278px;
+  height: 58px;
+}
+
+.dropdown-footer .footer-settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  height: 40px;
+}
+

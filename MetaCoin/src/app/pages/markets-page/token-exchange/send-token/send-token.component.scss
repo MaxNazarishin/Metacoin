@@ -1,0 +1,38 @@
+@import '../../../../../styles/styles';
+
+.card {
+  border-radius: 10px;
+  border: none;
+  @extend .color-background-8;
+  color: var(--text-color);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.form-range {
+  margin-top: 10px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p:first-child {
+  font-size: 17px;
+}
+
+p {
+  font-family: $font-family-inter;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.med {
+  font-size: 17px;
+  font-weight: 500;
+}

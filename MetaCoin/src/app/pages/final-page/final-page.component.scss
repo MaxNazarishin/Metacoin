@@ -1,0 +1,70 @@
+@import '../../../styles/styles';
+
+body {
+  position: relative;
+  overflow: hidden;
+  min-height: 950px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding: 5px;
+  margin-bottom: 40px;
+}
+
+.final-page {
+  padding: 10px;
+  position: relative;
+  font-size: 128px;
+  font-family: $font-family-philosopher;
+  text-align: center;
+  @extend .gradient-text;
+}
+
+.background-circle {
+  position: absolute;
+  filter: blur(240px);
+  z-index: 0;
+  opacity: 1;
+  border-radius: 50%;
+}
+
+//--------------------------------------
+
+.circle1 {
+  width: 700px;
+  height: 700px;
+  top: 40%;
+  left: -15%;
+}
+
+.circle2 {
+  width: 600px;
+  height: 600px;
+  top: -10%;
+  right: -10%;
+}
+
+@media (max-width: 960px) {
+  .final-page {
+    font-size: 80px;
+  }
+
+  body {
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 650px) {
+  .final-page {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  .final-page {
+    font-size: 45px;
+  }
+}
