@@ -1,4 +1,4 @@
-This repository contains an example of a crypto wallet site This site will be further developed in the future (I take it as an exam paper)
+This repository contains an example of a crypto wallet website. The site will be finalized in the future (I take it as an exam paper).The site is written using the Angular framework.
 
 To run my project, you must first download my file. 
 Here is an example of how to download the file: 
